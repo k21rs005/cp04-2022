@@ -204,8 +204,10 @@
         if(active){
             var time = parseInt((new Date() - startTime)/1000);
             var rest = period - time;
+            var rest_m = parseInt(rest/60);
+            var rest_s = parseInt(rest - rest_m*60);
             $("#time").html("経過時間： " + time);
-            $("#remain").html("残り時間： " + rest);
+            $("#remain").html("残り時間： " + rest_m + "分" + rest_s + "秒");
             analog(rest);
         }
         
