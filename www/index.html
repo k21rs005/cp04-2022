@@ -197,6 +197,7 @@
             period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
             $("#time").html("経過時間： 0");
             $("#remain").html("残り時間： " + period);
+            $("#btnA").prop("disabled", false);
         }
 
 
@@ -208,7 +209,7 @@
                 var rest_m = parseInt(rest / 60);
                 var rest_s = parseInt(rest - rest_m * 60);
                 $("#time").html("経過時間： " + time);
-                $("#remain").html("残り時間： " + rest_m + "分" + rest_s + "秒");
+                $("#remain").html("残り時間： " + rest_m + "分" + rest_s );
                 analog(rest);
             }else{
                 time = time;
