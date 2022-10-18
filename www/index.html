@@ -210,6 +210,12 @@
                 $("#time").html("経過時間： " + time);
                 $("#remain").html("残り時間： " + rest_m + "分" + rest_s + "秒");
                 analog(rest);
+            }else{
+                time = time;
+                rest = rest;
+                rest_m = rest_m;
+                rest_s = rest_s;
+                $("#btnA").prop("disabled", false);
             }
 
             if (rest <= 0) {
