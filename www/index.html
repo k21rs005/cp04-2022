@@ -177,6 +177,12 @@
             audio.play();
         }
 
+        function music(){
+            var clock_audio = new Audio();
+            clock_audio.src = "clock_veryshort.mp3";
+            clock_audio.play();
+        }
+
         // ButtonAがクリックされた時の処理
         function btnAClick(e) {
             active = true;
@@ -217,6 +223,10 @@
                 rest_m = rest_m;
                 rest_s = rest_s;
                 $("#btnA").prop("disabled", false);
+            }
+
+            if(rest <= 10 && rest >= 0){
+                music();
             }
 
             if (rest <= 0) {
