@@ -177,7 +177,7 @@
             audio.play();
         }
 
-        function music(){
+        function music() {
             var clock_audio = new Audio();
             clock_audio.src = "clock_veryshort.mp3";
             clock_audio.play();
@@ -215,9 +215,9 @@
                 var rest_m = parseInt(rest / 60);
                 var rest_s = parseInt(rest - rest_m * 60);
                 $("#time").html("経過時間： " + time);
-                $("#remain").html("残り時間： " + rest_m + "分" + rest_s );
+                $("#remain").html("残り時間： " + rest_m + "分" + rest_s);
                 analog(rest);
-            }else{
+            } else {
                 time = time;
                 rest = rest;
                 rest_m = rest_m;
@@ -225,7 +225,7 @@
                 $("#btnA").prop("disabled", false);
             }
 
-            if(rest <= 10 && rest >= 0){
+            if (rest <= 10 && rest >= 0) {
                 music();
             }
 
