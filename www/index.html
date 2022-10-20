@@ -154,6 +154,9 @@
         var active = false;
         var startTime = 0;
         var period = 0;
+        var tmp_rest = 0;
+        var spend_time = 0;
+        var count = 0;
         // ボタンの初期設定
         function init() {
             $('#btnA').prop('disabled', false);
@@ -193,7 +196,7 @@
         // ButtonBがクリックされた時の処理
         function btnBClick(e) {
             active = false;
-
+            $("#btnA").prop("disabled", false);
         }
 
         // ButtonCがクリックされた時の処理
@@ -212,18 +215,14 @@
             if (active) {
                 var time = parseInt((new Date() - startTime) / 1000);
                 var rest = period - time;
+                spend_time = rest;
                 var rest_m = parseInt(rest / 60);
                 var rest_s = parseInt(rest - rest_m * 60);
                 $("#time").html("経過時間： " + time);
                 $("#remain").html("残り時間： " + rest_m + "分" + rest_s);
                 analog(rest);
-            } else {
-                time = time;
-                rest = rest;
-                rest_m = rest_m;
-                rest_s = rest_s;
-                $("#btnA").prop("disabled", false);
             }
+                
 
             if (rest <= 10 && rest >= 0) {
                 music();
