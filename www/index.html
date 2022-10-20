@@ -215,7 +215,6 @@
             if (active) {
                 var time = parseInt((new Date() - startTime) / 1000);
                 var rest = period - time;
-                spend_time = rest;
                 var rest_m = parseInt(rest / 60);
                 var rest_s = parseInt(rest - rest_m * 60);
                 $("#time").html("経過時間： " + time);
